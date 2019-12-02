@@ -9,9 +9,9 @@ def move_anime(file, source_folder, destination_folder):
         os.mkdir(target_folder)
 
     if not os.path.exists(os.path.join(target_folder, file)):
-        shutil.move(os.path.join(source_folder, file), os.path.join(target_folder, file))
-    else: 
-        shutil.rmtree(os.path.join(target_folder, file))
+        os.remove(os.path.join(target_folder, file))
+            
+    shutil.move(os.path.join(source_folder, file), os.path.join(target_folder, file))
 
     print(file + " - processed")
 
